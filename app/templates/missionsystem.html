@@ -59,23 +59,23 @@ $(document).ready(function(){
                   
                 </thead>
                 <tbody>
-                    {% for a in account %}
+                   
                     <tr>
-                        <td>{{a.0}}</td>
-                        <td>{{a.1}}</td>
+                        <td></td>
+                        <td></td>
  
-                        <td style="text-align: center;"><input style="text-align: center;" type="date"  value="{{a.2}}" readonly></td>
-                        <td style="text-align: center;"><input style="text-align: center;"  type="date" value="{{a.3}}"readonly></td>
-                        <td style="text-align: center;">{{a.4}}</td>
-                        <td style="text-align: center;">{{a.7}}</td>
-                        <td style="text-align: center;">{{a.6}}</td>
+                        <td style="text-align: center;"><input style="text-align: center;" type="date"   readonly></td>
+                        <td style="text-align: center;"><input style="text-align: center;"  type="date"     readonly></td>
+                        <td style="text-align: center;"></td>
+                        <td style="text-align: center;"></td>
+                        <td style="text-align: center;"></td>
                         <td style="text-align: center;">
-                            <a href="/view"  data-toggle="modal" data-target="#modalview{{a.0}}" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="#modaledit{{a.0}}" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="/delete/{{a.0}}" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
+                          
+                           
+                            
                         </td>
                     </tr>
-                    {% endfor %}
+      
                 </tbody>
                 
             </table>
@@ -87,164 +87,7 @@ $(document).ready(function(){
              {% if ac %}
              <p style="color: rgb(255, 0, 0);"><strong>Alert:</strong> {{ ac }}
               {% endif %}
-              <!-- <div  id="example_length"><label>Trạng thái nhiệm vụ
-                <select name="example_length" aria-controls="example" class="form-control form-control-sm">
-                    <option value="-1">All
-                    <option value="3">Còn</option>
-                    <option value="5">Hết</option>
-                    </option></select></label></div> -->
-              <!-- Modal VIEW -->
-              {% for a in account %}
-              <div id="modalview{{a.0}}" class="modal fade" role="dialog">
-                <div class="modal-dialog">   
-                   <div class="modal-content">    
-                      <div class="modal-header">
-                         <h4 class="modal-title">Chi tiết nhiệm vụ</h4>
-                      </div>
-         <div class="modal-body">
-                         <form action="/view" method="POST">
-                            <div class="form-group">      
-                                <label>ID:</label>
-                                <input type="text" class="form-control" name="id"  value="{{a.0}}" readonly>        
-                             </div> 
-                            <div class="form-group">      
-                               <label>Tên nhiệm vụ:</label>
-        
-                               <input type="text" class="form-control" name="name" value="{{a.1}}" readonly>        
-                            </div>          
-                            <div class="form-group">      
-                                <label>Mô tả:</label>
-                                 
-                                <textarea type="text" style="text-align: left;"  class="form-control" name="address" readonly>{{a.5}}  
-                     
-                                </textarea>
-                             </div>
-                             <div class="form-group">
-                                <div class="row">
-                                    <div class="col">
-                                        <label>Ngày bắt đầu:</label>
-                                        
-                                        <input type="date" class="form-control" value="{{a.2}}"readonly >
-                                    </div>
-                                    <div class="col">
-                                        <label>Ngày kết thúc:</label>
-                                        <input type="date" class="form-control" value="{{a.3}}"readonly >
-                                    </div>
-                                </div>        	
-                            </div>
 
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col">
-                                        <label>Điểm:</label>
-                                        
-                                        <input type="text" class="form-control" value="{{a.4}}"readonly >
-                                    </div>
-                                    <div class="col">
-                                        <label>Số lượng:</label>
-                                        <input type="text" class="form-control" value="{{a.7}}"readonly >
-                                    </div>
-                                </div>        	
-                            </div>
-                            <div class="form-group">           
-                                <label>Trạng thái:</label>
-                                <select class="form-control" name="trangthai" readonly > 
-                                    <option value="1">{{a.6}}</option>   
-                                    </select>
-                             </div>        
-                             <div class="form-group">      
-                                <label>Những người đã nhận:</label>
-         
-                                <input type="text" class="form-control" name="name" value="Nhật,Đức,Việt,Long" readonly>        
-                             </div>       
-                         </form>        
-                      </div> 
-                      <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>             
-                      </div>             
-                   </div>             
-                </div>             
-             </div>  
-             {% endfor %}
-
-              <!-- Modal update -->
-              {% for a in account %}
-              <div id="modaledit{{a.0}}" class="modal fade" role="dialog">
-                <div class="modal-dialog">   
-                   <div class="modal-content">    
-                      <div class="modal-header">
-                         <h4 class="modal-title">Sửa nhiệm vụ</h4>
-                      </div>
-         <div class="modal-body">
-                         <form action="/editnhiemvu" method="POST">
-        
-                                <div class="form-group">      
-                                    <label>ID:</label>
-                                    <input type="text" class="form-control" name="id"  value="{{a.0}}" >        
-                                 </div> 
-                                <div class="form-group">      
-                                   <label>Tên nhiệm vụ:</label>
-            
-                                   <input type="text" class="form-control" name="name" value="{{a.1}}" >        
-                                </div>          
-                                <div class="form-group">      
-                                    <label>Mô tả:</label>
-                                    <input type="text" style="text-align: left;" value="{{a.5}}"  class="form-control" name="mota" >
-                     
-                                </input>
-                                 </div>
-                                 <div class="form-group">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>Ngày bắt đầu:</label>
-                                            
-                                            <input type="date" name="ngaybd" class="form-control" value="{{a.2}}" >
-                                        </div>
-                                        <div class="col">
-                                            <label>Ngày kết thúc:</label>
-                                            <input type="date" name="ngaykt" class="form-control" value="{{a.3}}" >
-                                        </div>
-                                    </div>        	
-                                </div>
-    
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>Điểm:</label>
-                                            
-                                            <input type="input" name="diem" class="form-control" value="{{a.4}}" >
-                                        </div>
-                                        <div class="col">
-                                            <label>Số lượng:</label>
-                                            <input type="input" name="soluong" class="form-control" value="{{a.7}}" >
-                                        </div>
-                                    </div>        	
-                                </div>
-                                <div class="form-group">           
-                                    <label>Trạng thái:</label>
-                                    <select class="form-control" name="trangthai" > 
-                                        <option value="{{a.6}}">{{a.6}}</option> 
-                
-
-                                        </select>     
-                                 </div>   
-                             
-                         
-                           
-                            <div class="form-group">    
-                               <button class="btn btn-primary" type="submit">Cập nhập</button>      
-                            </div> 
-                         </form>        
-                      </div> 
-                      <div class="modal-footer">
-                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>             
-                      </div>             
-                   </div>             
-                </div>             
-             </div>  
-             {% endfor %}
-                             </table>                          
-                         </div> 
 <!-- Modal Add Employee-->
 
 
