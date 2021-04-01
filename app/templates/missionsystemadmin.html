@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Employee Management</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='missionsystem.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='missionsystemadmin.css') }}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -59,166 +59,25 @@ $(document).ready(function(){
 
                 </thead>
                 <tbody>
-          
+                    {% for a in Task %}
                     <tr>
-                        <td>1</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
+                        <td>{{a['id']}}</td>
+                        <td>{{a['Title']}}</td>
+                        <td style="text-align: center;"><input style="text-align: center;" type="date"  value="{{a['StartDate']}}" readonly></td>
+                        <td style="text-align: center;"><input style="text-align: center;"  type="date" value="{{a['EndDate']}}"readonly></td>
+                        <td style="text-align: center;">{{a['Point']}}</td>
+                        <td style="text-align: center;">{{a['Limit']}}</td>
+                        <td style="text-align: center;">{{a['State']}}</td>
 
-                    <tr>
-                        <td>2</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
+
+                        <td style="text-align: center;">
+                            <a href="/view"  data-toggle="modal" data-target="#modalview{{a.0}}" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
+                            <a href="#"  data-toggle="modal" data-target="#modaledit{{a.0}}" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
+                            <a href="/delete/{{a.0}}" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
-                        <td>Quét nhà chùa</td>
-                        <td ><input  type="date"  value="2021-04-04" readonly></td>
-                        <td ><input  type="date" value="2021-04-05" readonly></td>
-                        <td >60</td>
-                        <td >3</td>
-                        <td >Còn</td>
-                        <td >
-                            <a href="/view"  data-toggle="modal" data-target="" class="view" title="Xem " ><i class="material-icons">remove_red_eye</i></a>
-                            <a href="#"  data-toggle="modal" data-target="" class="edit" title="Sửa" ><i class="material-icons">edit</i></a>
-                            <a href="" class="delete" title="Xóa" data-toggle="tooltip"><i class="material-icons">delete</i></a>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
-
-
-
 
             </table>
 
@@ -236,7 +95,7 @@ $(document).ready(function(){
                     <option value="5">Hết</option>
                     </option></select></label></div> -->
               <!-- Modal VIEW -->
-              {% for a in account %}
+              {% for a in Task %}
               <div id="modalview{{a.0}}" class="modal fade" role="dialog">
                 <div class="modal-dialog">   
                    <div class="modal-content">    
@@ -310,7 +169,7 @@ $(document).ready(function(){
              {% endfor %}
 
               <!-- Modal update -->
-              {% for a in account %}
+              {% for a in Task %}
               <div id="modaledit{{a.0}}" class="modal fade" role="dialog">
                 <div class="modal-dialog">   
                    <div class="modal-content">    

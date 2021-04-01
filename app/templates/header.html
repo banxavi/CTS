@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
 </head>
 
-{% if 1>0  %}
+{% if session['idname'] =="abc"%}
 <header>
 <body>
   <nav class="navbar">
@@ -19,8 +19,8 @@
         <div class="icon1 cancel-btn">
           <i class="fas fa-times"></i>
         </div>
-        <li class="active"><a href="/home">Trang chủ</a></li>
-        <li><a href="/nhiemvu">Quản lí nhiệm vụ</a></li>
+        <li class="active"><a href="/">Trang chủ</a></li>
+        <li><a href="/mission">Quản lí nhiệm vụ</a></li>
         <li><a href="/employee">Quản lí nhân viên</a></li>
         <li><a href="/doithuong">Đổi thường</a></li>
         <li><a href="#">Thông báo</a></li>
@@ -35,7 +35,7 @@
 
 {% endif %}
 
-{% if 0>2%}
+{% if session['idname'] !="abc"%}
 <header>
 
   <nav class="navbar">
