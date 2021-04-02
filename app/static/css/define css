@@ -56,3 +56,5 @@ color .footer-dark = #f0f9ff;
 font-size .footer-dark h3 = 16px
 font-size .footer-dark ul = 14px
 font-size .footer-dark .item.social > a =  20px;
+
+    Define css MissionSystemAdmin

@@ -22,11 +22,11 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 def home():
     return render_template("home.html")
 
+@app.route('/mission')
+def mission():
+    return render_template("missionsystem.html")
+    
 @app.route('/logout')
 def logout():
     return render_template("login.html")
 
-# Đổi thưởng user
-@app.route('/doithuonguser')
-def doithuonguser():
-    return render_template('exchange.html')
